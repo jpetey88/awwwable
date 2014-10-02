@@ -21,4 +21,8 @@ public class MainActivity extends Activity {
 			}
 		});
 	}
-}
+	private static Asset createAssetFromBitmap(Bitmap bitmap) {
+	    final ByteArrayOutputStream byteStream = new ByteArrayOutputStream();
+	    bitmap.compress(Bitmap.CompressFormat.PNG, 100, byteStream);
+	    return Asset.createFromBytes(byteStream.toByteArray());
+	}
